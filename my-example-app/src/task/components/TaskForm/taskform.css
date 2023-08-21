@@ -1,0 +1,58 @@
+.custom-input-note-primary {
+    margin-bottom: 1%;
+    background-color: #f5f5f5;
+    border-color: linear-gradient(55deg, rgba(34,195,185,1) 18%, rgba(186,253,45,1) 88%);  
+    border-radius: 10px 10px 1px 1px;
+    border: solid rgba(34,195,185,1); 
+    width: 98%;
+    height: 50px;
+    margin-left: 0.5%;
+    text-indent: 10px;
+    margin-bottom: 5%;
+}
+ 
+.custom-input-note-primary:focus { 
+    outline: none;
+    border: solid 2px rgb(26, 25, 25);    
+    border-bottom-color: rgba(34,195,185,1);   
+}
+
+.custom-edit-button {
+    background: rgb(253,142,45);
+    background: linear-gradient(72deg, rgba(253,142,45,1) 36%, rgba(253,219,45,1) 100%);
+    color:white;
+    width: 20%;
+    height: 35px;
+    border-radius: 20px 20px 20px 20px;
+    border: solid rgba(34,195,185,1); 
+    margin-right: 0.3%;
+    margin-left: 0.3%;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: 2px 1px 1px 1px #e8e6e6;  
+    margin-top: 0.1%;
+}
+
+.custom-cancel-button {
+    background: rgb(226,59,93);
+    background: linear-gradient(90deg, rgba(226,59,93,1) 43%, rgba(255,0,31,1) 100%);
+    color:white;
+    width: 20%;
+    height: 35px;
+    border-radius:20px 20px 20px 20px;
+    border: solid rgba(34,195,185,1); 
+    margin-right: 0.3%;
+    margin-left: 0.3%;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: 2px 1px 1px 1px #e8e6e6;  
+    margin-top: 0.1%;
+}
+
+.left{
+    float:left;
+}
+
+.right{
+   float:right;
+}

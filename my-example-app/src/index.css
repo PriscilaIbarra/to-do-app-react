@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:  #282c34;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+   box-shadow: inset 0 0 2px rgb(34,195,185);
+   border-radius: 10px ;  
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(34,195,185) ;
+  border-radius:10px;
+}
+
+.row {
+  width:100%;
+  align-items: left;
+  padding-top :1%;
+  padding-bottom: 1%;
+  display: flex;  
+}
+
+@media only screen and (min-width:1024px){
+  .md-column {
+     position: relative;
+     width:30%;
+     margin-left: 2,5%;
+     margin-right: 2.5%;
+     margin-top:1%;
+  }  
+}
+
+@media only screen and (max-width:1020px){
+  .sm-column{
+    position:relative;
+    margin-left:10%;
+    margin-right:10%;
+    width:80%;
+    margin-top:2%;
+  }
+}
+
+@media only screen and (max-width:769px){
+  .xs-column {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+    margin-top: 2%;
+  }
+}
