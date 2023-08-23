@@ -3,7 +3,7 @@
     margin-top: 50px;   
     margin-bottom:80px;
     align-items: center;
-    justify-content: center;
+    justify-content: center;   
 }
 
 .custom-note-title-primary {
@@ -12,7 +12,22 @@
     margin-left: 4.8%;
     margin-bottom: 0%;
     color:rgb(34,195,185);
-    font-weight: bold;    
+    font-weight: bold;       
+}
+
+.custom-complete-text-note{
+    margin-top: 0%;
+    margin-left: 1.4%;
+    background: grey;
+    color:white;
+    border-radius: 20px 20px 20px 20px;
+    border: solid rgba(34,195,185,1) 1px;  
+    width: 95%;
+    height: 80px;
+    text-align: left;
+    margin-left: 10px;
+    justify-content: center;
+    text-indent: 10px;
 }
 
 .custom-text-note-primary {
@@ -28,6 +43,7 @@
     text-align: left;
     margin-left: 10px;
     justify-content: center;
+    text-indent: 10px;
 }
 
 .custom-note-form-title { 
@@ -94,6 +110,11 @@
     margin-top: 0.1%;
 }
 
+.disabled-button {
+    background: rgb(138, 132, 128);
+    background: linear-gradient(72deg, rgb(182, 178, 175) 36%, rgb(230, 229, 223) 100%);  
+}
+
 .custom-delete-button {
     background: rgb(226,59,93);
     background: linear-gradient(90deg, rgba(226,59,93,1) 43%, rgba(255,0,31,1) 100%);
@@ -108,4 +129,50 @@
     font-style: oblique;
     box-shadow: 2px 1px 1px 1px #e8e6e6;  
     margin-top: 0.1%;
+}
+
+.custom-check-button {
+    background: rgb(186 253 45);
+    background: linear-gradient(55deg, rgba(34,195,185,1) 18%, rgba(186,253,45,1) 88%);
+    color:white;
+    width: 30%;
+    height: 195px;
+    border-radius:20px 20px 20px 20px;
+    border: solid rgba(34,195,185,1); 
+    margin-right: 3.3%;
+    margin-left: 0.3%;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: 2px 1px 1px 1px #e8e6e6;  
+    margin-top: 0.9%;
+}
+
+.tooltiptext {
+ position: relative; 
+}
+
+.tooltiptext:before {
+  content:attr(data-hover);
+  visibility: hidden; 
+  opacity: 0;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  z-index:1;
+  left:0%;
+  top:110%;
+  min-width: 100px;
+}
+
+.tooltiptext:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-set-complete:before{
+    background: rgb(186 253 45);
+    background: linear-gradient(30deg, rgba(34,195,185,1) 88%, rgba(186,253,45,1) 58%);
+    color: #fff;
 }

@@ -13,7 +13,8 @@ const TaskCrud : React.FC  = ()=>{
     const [tasks, setTasks] = useState<TasksArray>([])
     const [task, setTask] = useState<Task>({
       title:'',
-      description:''
+      description:'',
+      complete:false,
     })
   
     const [edit,setEditTask] = useState<boolean>(false);
@@ -23,7 +24,15 @@ const TaskCrud : React.FC  = ()=>{
       oldTasks.push(task);
       setTasks(oldTasks)
     }
-    
+
+    const completeTask = (task:Task)=>{
+      let index : number = tasks.indexOf(task);
+      if(index===-1) return 
+      let taskToModified = tasks[index];
+      taskToModified.complete = !taskToModified.complete
+      replaceTask(index, taskToModified)       
+    }
+
     const deleteTask = (task:Task)=>{
       let index : number = tasks.indexOf(task)
       if(index === -1) return 
@@ -57,7 +66,8 @@ const TaskCrud : React.FC  = ()=>{
     const getNewTask = ():Task=>{
       return {
         title:'',
-        description:''
+        description:'',
+        complete:false
       }
     }
   
@@ -74,6 +84,9 @@ const TaskCrud : React.FC  = ()=>{
         case ActionTypes.EDIT:
           editTask(action.payload)
           break;
+        case ActionTypes.SET_AS_COMPLETE:
+          completeTask(action.payload)
+          break;
         default:
           break;
       }
@@ -82,7 +95,7 @@ const TaskCrud : React.FC  = ()=>{
     return (
         <Fragment>
               <TaskCrudTitle 
-              title={'Tareas Pendientes'}              
+              title={'To Do List'}              
               type={'h1'}
               className={'title-primary'}/>        
               <TaskForm 

@@ -2,6 +2,7 @@ import React from "react"
 import { ActionTypes } from "../../actionTypes"
 import { TaskCardProps, Action } from "../../types/index"
 import '../TaskCard/taskcard.css'
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 const TaskCard : React.FC<TaskCardProps>  = ({task,onAction})=>{
 
@@ -23,15 +24,26 @@ const TaskCard : React.FC<TaskCardProps>  = ({task,onAction})=>{
                  {task.title}
                 </h4>
                 <textarea
-                className="custom-text-note-primary"                
+                disabled={true}
+                className={task.complete?"custom-complete-text-note":"custom-text-note-primary"}                
                 >
                 {task.description} 
                 </textarea>
                 <button 
-                className="custom-edit-button left"
+                className={"custom-edit-button left"}
                 onClick={(e)=>performAction(ActionTypes.EDIT)}
+                hidden={task.complete}
                 >Edit</button>
-                <button 
+                <span
+                className="tooltiptext tooltip-set-complete"
+                data-hover={task.complete ? "Pendant":"Set as complete"}
+                >
+                    <TaskAltIcon
+                    className="custom-check-button right"
+                    onClick={(e)=>performAction(ActionTypes.SET_AS_COMPLETE)}
+                    />
+                </span>
+                 <button 
                 className="custom-delete-button right"
                 onClick={(e)=>performAction(ActionTypes.DELETE)}
                 >Delete</button>

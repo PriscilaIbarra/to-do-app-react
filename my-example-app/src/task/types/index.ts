@@ -13,6 +13,7 @@ export interface TaskCrudContainerProps {
 export interface Task {
     title:string;
     description:string;
+    complete:boolean;
 }
 
 export type TasksArray = Task[]

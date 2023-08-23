@@ -7,13 +7,15 @@ const TaskForm : React.FC <TaskFormProps>= ({onAdd,taskToEdit,editTask,onSave,on
      
      const [task, setTask] = useState<Task>({
         title:'',
-        description:''
+        description:'',
+        complete:false,
      })
 
      const getNewTask = ():Task=>{
       return {
-         title:'',
-        description:''
+        title:'',
+        description:'',
+        complete:false
       }
      }
 
