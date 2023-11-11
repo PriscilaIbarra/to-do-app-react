@@ -3,6 +3,11 @@
  height: "50px";
 }
 
+.alert-text{
+    justify-content: center;
+    text-align: center;
+}
+
 .success {
     background: rgb(34,195,185);
     background: linear-gradient(55deg, rgba(34,195,185,1) 18%, rgba(186,253,45,1) 88%);
@@ -27,22 +32,24 @@
     margin-left: 0.3%;
     font-weight: bold;
     font-style: oblique;
-    box-shadow: 2px 1px 1px 1px #e8e6e6;  
     margin-top: 0.1%;
 }
 
 .custom-cancel-icon-button {
+    margin-top: -100%;
     background: rgb(226,59,93);
     background: linear-gradient(90deg, rgba(226,59,93,1) 43%, rgba(255,0,31,1) 100%);
     color:white;
     width: 10%;
-    height: 15px;
+    height: 30px;
     border-radius:20px 20px 20px 20px;
     border: solid rgb(226,59,93); 
-    margin-right: 3.3%;
-    margin-left: 0.3%;
     font-weight: bold;
     font-style: oblique;
     box-shadow: 2px 1px 1px 1px #e8e6e6;  
     margin-top: 0.9%;
+}
+
+.left {
+    float:left
 }

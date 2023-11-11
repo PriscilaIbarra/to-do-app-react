@@ -12,10 +12,12 @@ const Alert : React.FC <AlertProps> = ({ msg })=>{
         <div
         style={alertStyle}
         className={msg.severity.level}        
-        >
-            {msg.content}
+        >   
+            <p className={"alert-text"}>
+                {msg.content}
+            </p>
             <button
-            className={"custom-cancel-icon-button"}            
+            className={"custom-cancel-icon-button left"}            
             >
                 x
             </button>
