@@ -9,7 +9,11 @@
     margin-left: 0.5%;
     text-indent: 10px;
 }
- 
+
+.text-area-primary {
+   resize: none;
+}
+
 .custom-input-note-primary:focus { 
     outline: none;
     border: solid 2px rgb(26, 25, 25);    

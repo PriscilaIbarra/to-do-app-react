@@ -34,7 +34,7 @@ export interface TaskFormProps {
     taskToEdit: Task;
     onSave: OnSaveFunction;
     onCancel: OnCancelFunction;
-    onNotify: OnNotifyFunction;
+    onNotify?: OnNotifyFunction;
     editTask: boolean;
 }
 
@@ -76,8 +76,7 @@ export interface NotifyValidationErrorAction {
 
 export type NotifyAction = NotifyValidationErrorAction 
 
-export type Action  = TaskAction |  
-                      NotifyAction
+export type Action  = TaskAction 
 
 export interface FooterContainerProps {
     addButton : React.ReactNode;

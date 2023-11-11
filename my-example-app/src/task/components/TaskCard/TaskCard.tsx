@@ -26,7 +26,7 @@ const TaskCard : React.FC<TaskCardProps>  = ({task,onAction})=>{
                 </h4>
                 <textarea
                 disabled={true}
-                className={task.complete?"custom-complete-text-note":"custom-text-note-primary"}                
+                className={task.complete?"custom-complete-text-note text-area-primary":"custom-text-note-primary text-area-primary"}                
                 >
                 {task.description} 
                 </textarea>

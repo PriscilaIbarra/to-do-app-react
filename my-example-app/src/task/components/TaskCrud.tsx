@@ -1,13 +1,12 @@
 import React, {Fragment, useState,} from "react";
 import { ActionTypes } from "../actionTypes/index";
-import { Action, NotifyValidationErrorPayload } from "../types/index";
-import { TasksArray, Task, Message } from "../types/index";
+import { Action } from "../types/index";
+import { TasksArray, Task} from "../types/index";
 import TaskForm from "./TaskForm/TaskForm";
 import TasksListContainer from './TasksListContainer';
 import TasksList from "./TasksList";
 import TaskCrudTitle from "./TaskCrudTitle/TaskCrudTitle";
 import "./TaskCrudTitle/taskcrudtitle.css"
-import TaskAlert from "./TaskAlert/TaskAlert";
 
 const taskCrudTitleStyle = {
   title:'To Do List',
@@ -17,7 +16,9 @@ const taskCrudTitleStyle = {
 
 const TaskCrud : React.FC  = ()=>{
 
-    const [tasks, setTasks] = useState<TasksArray>([])
+    const [tasks, setTasks] = useState<TasksArray>([
+      {title:'Buy Clothes',description:'Buy trousers and shirt',complete:false}
+    ])
     const [task, setTask] = useState<Task>({
       title:'',
       description:'',
@@ -25,14 +26,6 @@ const TaskCrud : React.FC  = ()=>{
     })
     
     const [edit,setEditTask] = useState<boolean>(false);
-    const [showAlert,setShowAlert] = useState<boolean>(false)
-    const [alertMsg, setAlertMsg] = useState<Message>({
-      content:'',
-      severity:{
-        quantity:0,
-        level:"success"
-      }
-    })
 
     const handleOnAdd = (task:Task)=>{
       let oldTasks : TasksArray = [...tasks]
@@ -60,16 +53,7 @@ const TaskCrud : React.FC  = ()=>{
       setEditTask(true)
       handleOnEdit(task)
     }
-    
-    const handleOnNotify = (notifyAction:Action)=>{
-      handleOnAction(notifyAction)
-    }
-
-    const notify = (payload: NotifyValidationErrorPayload)=>{
-      setShowAlert(true);
-      setAlertMsg(payload.msg)
-    }
-
+ 
     const handleOnEdit = (task:Task)=>{
       setTask(task)
     }
@@ -111,9 +95,6 @@ const TaskCrud : React.FC  = ()=>{
         case ActionTypes.SET_AS_COMPLETE:
           completeTask(action.payload)
           break;
-        case ActionTypes.NOTIFY:
-          notify(action.payload)
-          break;  
         default:
           break;
       }
@@ -130,13 +111,8 @@ const TaskCrud : React.FC  = ()=>{
               onAdd={handleOnAdd}              
               onSave={handleOnSave} 
               onCancel={handleOnCancel}
-              onNotify={handleOnNotify}
               taskToEdit={task}
               editTask={edit}
-              />
-              <TaskAlert 
-              show={showAlert} 
-              msg={alertMsg}
               />
               <TasksListContainer>
                   <TasksList 

@@ -1,12 +1,8 @@
 import React , { useState, useEffect} from "react"
 import { Task, 
-         TaskFormProps,
-         TaskKeysArray,
-         NotifyValidationErrorPayload
+         TaskFormProps      
        } from '../../types/index'
 import TaskFormFooterContainer from "../TaskFormFooterContainer"
-import { notifyValidationErrorActionCreator } from "../../actionsCreators/index"
-import {isNotNull} from "../../utils/rules"
 import './taskform.css';
 
 const taskFormStyle = {
@@ -15,9 +11,7 @@ const taskFormStyle = {
    marginRight:'1%'
 }
 
-const TaskForm : React.FC <TaskFormProps>= ({onAdd,taskToEdit,editTask,onSave,onCancel,onNotify})=>{
-
-     const [formStatus, setFormStatus] = useState<boolean>(false); 
+const TaskForm : React.FC <TaskFormProps>= ({onAdd,taskToEdit,editTask,onSave,onCancel})=>{
 
      const [task, setTask] = useState<Task>({
         title:'',
@@ -44,42 +38,11 @@ const TaskForm : React.FC <TaskFormProps>= ({onAdd,taskToEdit,editTask,onSave,on
        })
      }
 
-     const validateForm = ()=>{ 
-         let keys : TaskKeysArray = Object.keys(task);         
-         let inputsStatus : boolean [] = [];
-         keys.forEach((key:string)=>{ 
-           let value : any = Object.getOwnPropertyDescriptor(task,key)
-           inputsStatus.push(isNotNull(value));
-         });         
-         let formStatus:boolean = inputsStatus.reduce((prevStatus,currentStatus)=>prevStatus && currentStatus,true);
-         setFormStatus(formStatus);
-     }
-
      const cleanTaskForm = ()=>{
         setTask(getNewTask())
      }
 
-     const getValidationMessages = ():NotifyValidationErrorPayload=>{
-         return {
-               msg:{
-               content:'Complete required inputs',
-               severity:{
-                  quantity: 1,
-                  level:'danger'
-               }
-            }
-        }
-     }
-     
-     const notifyValidationResult = ()=>{
-         let payload : NotifyValidationErrorPayload =  getValidationMessages()
-         if(!formStatus) onNotify(notifyValidationErrorActionCreator(payload))         
-     }
-
      const add = ()=>{
-        validateForm();
-        notifyValidationResult();
-        if(!formStatus) return
         onAdd(task);
         cleanTaskForm();
      }
@@ -106,8 +69,8 @@ const TaskForm : React.FC <TaskFormProps>= ({onAdd,taskToEdit,editTask,onSave,on
             onChange={updateTask}
             />
             <textarea 
-            name="description" 
-            className={"custom-input-note-primary"}       
+            name="description"
+            className={"custom-input-note-primary text-area-primary"}       
             value={task.description}
             onChange={updateTask}
             ></textarea>
