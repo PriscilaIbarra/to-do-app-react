@@ -17,7 +17,7 @@ const taskCrudTitleStyle = {
 const TaskCrud : React.FC  = ()=>{
 
     const [tasks, setTasks] = useState<TasksArray>([
-      {title:'Buy Clothes',description:'Buy trousers and shirt',complete:false}
+      {title:'Buy Clothes', description:'Buy trousers and shirt',complete:false}
     ])
     const [task, setTask] = useState<Task>({
       title:'',
@@ -115,10 +115,10 @@ const TaskCrud : React.FC  = ()=>{
               editTask={edit}
               />
               <TasksListContainer>
-                  <TasksList 
-                  tasks={tasks}
-                  onTaskAction={handleOnAction}
-                  />
+                    <TasksList 
+                    tasks={tasks}
+                    onTaskAction={handleOnAction}
+                    /> 
               </TasksListContainer>
         </Fragment>
     )

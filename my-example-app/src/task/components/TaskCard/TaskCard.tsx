@@ -16,7 +16,6 @@ const TaskCard : React.FC<TaskCardProps>  = ({task,onAction})=>{
     
     return(
            <div
-           style={{marginBottom:'10%',marginTop:'10%'}}
            className="custom-note-card-primary"
            >
                 <h4
