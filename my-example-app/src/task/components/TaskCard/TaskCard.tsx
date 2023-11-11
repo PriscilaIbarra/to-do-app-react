@@ -1,6 +1,6 @@
 import React from "react"
 import { ActionTypes } from "../../actionTypes"
-import { TaskCardProps, Action } from "../../types/index"
+import { TaskCardProps, Action} from "../../types/index"
 import '../TaskCard/taskcard.css'
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
@@ -16,6 +16,7 @@ const TaskCard : React.FC<TaskCardProps>  = ({task,onAction})=>{
     
     return(
            <div
+           style={{marginBottom:'10%',marginTop:'10%'}}
            className="custom-note-card-primary"
            >
                 <h4
@@ -43,7 +44,7 @@ const TaskCard : React.FC<TaskCardProps>  = ({task,onAction})=>{
                     onClick={(e)=>performAction(ActionTypes.SET_AS_COMPLETE)}
                     />
                 </span>
-                 <button 
+                <button 
                 className="custom-delete-button right"
                 onClick={(e)=>performAction(ActionTypes.DELETE)}
                 >Delete</button>

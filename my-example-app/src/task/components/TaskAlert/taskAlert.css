@@ -1,0 +1,48 @@
+.alert {
+ width: "100%";
+ height: "50px";
+}
+
+.success {
+    background: rgb(34,195,185);
+    background: linear-gradient(55deg, rgba(34,195,185,1) 18%, rgba(186,253,45,1) 88%);
+    color:white;
+    border-radius:20px 20px 20px 20px;
+    border: solid rgba(34,195,185,1); 
+    margin-right: 0.3%;
+    margin-left: 0.3%;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: 2px 1px 1px 1px #e8e6e6;  
+    margin-top: 0.1%;
+}
+
+.danger {
+    background: rgb(226,59,93);
+    background: linear-gradient(90deg, rgba(226,59,93,1) 43%, rgba(255,0,31,1) 100%);
+    color:white;
+    border-radius:20px 20px 20px 20px;
+    border: 1px solid rgba(34,195,185,1); 
+    margin-right: 3.3%;
+    margin-left: 0.3%;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: 2px 1px 1px 1px #e8e6e6;  
+    margin-top: 0.1%;
+}
+
+.custom-cancel-icon-button {
+    background: rgb(226,59,93);
+    background: linear-gradient(90deg, rgba(226,59,93,1) 43%, rgba(255,0,31,1) 100%);
+    color:white;
+    width: 10%;
+    height: 15px;
+    border-radius:20px 20px 20px 20px;
+    border: solid rgb(226,59,93); 
+    margin-right: 3.3%;
+    margin-left: 0.3%;
+    font-weight: bold;
+    font-style: oblique;
+    box-shadow: 2px 1px 1px 1px #e8e6e6;  
+    margin-top: 0.9%;
+}
