@@ -8,6 +8,7 @@ import TasksList from "./TasksList";
 import TaskCrudTitle from "./TaskCrudTitle/TaskCrudTitle";
 import "./TaskCrudTitle/taskcrudtitle.css"
 
+
 const taskCrudTitleStyle = {
   title:'To Do List',
   type:'h1',
@@ -99,6 +100,10 @@ const TaskCrud : React.FC  = ()=>{
           break;
       }
     }
+
+   
+   useEffect(()=>{
+   },[tasks])
    
     return (
         <Fragment>
